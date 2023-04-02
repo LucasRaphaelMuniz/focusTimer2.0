@@ -9,43 +9,10 @@
   --base-color: 240;
   --primary-color: hsla(var(--base-color), 6%, 21%);
   --tt-color: hsl(var(--base-color), 6%, 21%);
-  --icons-butons-bg: #E1E1E6;
-  --icons-butons-inner: #323238;
-  --switch-mode: url('./assets/logoLightMode.svg');
-  --bg-button: #E1E1E6;
-  --tt-button: #323238;
-  font-size: 62.5%;
-}
-
-.dark {
-  --bg-color: hsla(240, 5%, 7%, 1);
-  --base-color: 240;
-  --primary-color: #C4C4CC;
-  --tt-color: #C4C4CC;
-  --icons-butons-bg: #29292E;
-  --icons-butons-inner: #C4C4CC;
-  --bg-button: #29292E;
-  --tt-button: #C4C4CC;
-
-  --switch-mode: url('./assets/logoDarkMode.svg');
-
 
   font-size: 62.5%;
 }
 
-#switch {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row-reverse;
-}
-
-#switch button{
-  display: block;
-  background: var(--switch-mode) no-repeat center;
-  align-self: end;
-  justify-self: end;
-  padding: 6rem 10rem 0 0;
-}
 
 body {
   background-color: var(--bg-color);
@@ -73,17 +40,14 @@ button {
   display: none;
 }
 
-
 .play svg path,
 .pause svg path,
-.stop svg path,
-.removeTime svg path,
-.addTime svg path {
+.stop svg path {
   fill: var(--primary-color);
 }
 
 #controls svg {
-  width: 6.4rem
+  width: clamp(1.8rem, 2rem + 5vw, 6rem);
 }
 
 #timer {
@@ -101,18 +65,16 @@ button {
 
 }
 
-
-.switchSound {
+#switchSound {
   display: grid;
   gap: 3.2rem;
   margin-left: 19.2rem;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
 }
 
 @media (max-width: 900px) {
   body {
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100dvh;
@@ -122,37 +84,23 @@ button {
     justify-items: center;
   }
 
-  #controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .2rem;
-  
-  }
-
-<<<<<<< HEAD
   #timer {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
- 
+  #controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
 
   #switchSound {
-=======
-  .switchSound {
->>>>>>> b01ef638c7c41150421e31a202b89be2457c851a
     display: grid;
     gap: 3.2rem;
     margin: auto;
     grid-template-columns: repeat(2, 1fr);
   }
-
-  #switch {
-    display: flex;
-    justify-content: flex-start;
-    padding: 6rem 0 0 0;
-  }
-  
 }
